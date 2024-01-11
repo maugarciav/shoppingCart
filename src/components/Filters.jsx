@@ -27,7 +27,7 @@ export function Filters ({ changeFilters }) {
           type= 'range'
           id = 'price'
           min={0}
-          max={2000}
+          max={1000}
           onChange={handleChangeMinPrice}
         />
       </div>
