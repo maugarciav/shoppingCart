@@ -44,3 +44,11 @@
   object-fit: cover;
   background: #fff;
 }
+
+.products button {
+  margin: 3px;
+}
+
+.AddToCartIcon {
+  background-color: #09f;
+}

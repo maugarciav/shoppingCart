@@ -1,10 +1,12 @@
 import React from 'react'
 import './Footer.css'
 import { useFilters } from '../hooks/useFilters'
+import { useCart } from '../hooks/useCart'
 // import reactLogo from '../assets/react.svg'
 
 export function Footer () {
   const { filters } = useFilters()
+  const { cart } = useCart()
 
   return (
     <footer className='footer'>
@@ -12,7 +14,7 @@ export function Footer () {
       <h5>Shopping cart using useContext and useReducer</h5> */}
 
       {
-        JSON.stringify(filters, null, 2)
+        JSON.stringify(cart, null, 2)
       }
     </footer>
   )
