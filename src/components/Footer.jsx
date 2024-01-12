@@ -1,8 +1,11 @@
 import React from 'react'
 import './Footer.css'
+import { useFilters } from '../hooks/useFilters'
 // import reactLogo from '../assets/react.svg'
 
-export function Footer ({ filters }) {
+export function Footer () {
+  const { filters } = useFilters()
+
   return (
     <footer className='footer'>
       {/* <h4>Shopping cart -  <span>@maugarciav</span><img src={reactLogo} alt="React Logo" /></h4>
