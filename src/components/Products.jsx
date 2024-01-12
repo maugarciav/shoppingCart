@@ -13,8 +13,8 @@ export function Products ({ products }) {
               alt={product.title}
             />
             <div>
-              <strong>{product.title}</strong> - ${product.price}
-              <p>{product.description}</p>
+              <strong>{product.title}</strong> - ${product.price} <br/>
+              <small>{product.description}</small>
             </div>
             <div>
               <button>
