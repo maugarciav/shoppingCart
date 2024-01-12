@@ -1,17 +1,23 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 // Creacte Context
-export const FilterContext = createContext()
+export const FiltersContext = createContext()
 
 // Crear the provider for the project
 export function FiltersProvider ({ children }) {
-  return (
-    <FilterContext.Provider value={{
+  const [filters, setFilters] = useState(
+    {
       category: 'all',
       minPrice: 0
+    }
+  )
+  return (
+    <FiltersContext.Provider value={{
+      filters,
+      setFilters
     }}
     >
       {children}
-    </FilterContext.Provider>
+    </FiltersContext.Provider>
   )
 }
