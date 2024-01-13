@@ -26,7 +26,20 @@ export function CartProvider ({ children }) {
   const clearCart = () => { setCart([]) }
 
   const removeFromCart = (product) => {
-    setCart(prevState => prevState.filter(item => item.id !== product.id))
+    const productIndex = cart.findIndex(item => item.id === product.id)
+
+    if (productIndex >= 0) {
+      const newCart = [...cart]
+      const updatedProduct = { ...newCart[productIndex] }
+
+      if (updatedProduct.quantity > 1) {
+        updatedProduct.quantity -= 1
+        newCart[productIndex] = updatedProduct
+      } else {
+        newCart.splice(productIndex, 1)
+      }
+      setCart(newCart)
+    }
   }
 
   return (
